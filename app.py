@@ -56,7 +56,7 @@ def extract_vocabulary(image):
     """Uses gemini-flash-latest (Verified in your list) to save quota."""
     try:
         # --- THE FIX IS HERE ---
-        # We use 'gemini-flash-latest' because 1.5-flash was missing from your list
+        # We use 'gemini-flash-latest'
         model = genai.GenerativeModel("models/gemini-flash-latest")
         
         prompt = """
@@ -164,3 +164,4 @@ if user_message:
                 except Exception as e:
                     st.error(f"Error: {e}")
                     st.info("💡 Tip: If you get a 429 error, switch the 'Chat Engine' to 'gemini-flash-latest'.")
+
